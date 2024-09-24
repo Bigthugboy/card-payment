@@ -74,11 +74,6 @@
             <version>5.0.0.Alpha2</version>
         </dependency>
         <dependency>
-            <groupId>com.jcraft</groupId>
-            <artifactId>jsch</artifactId>
-            <version>0.1.55</version>
-        </dependency>
-        <dependency>
             <groupId>org.jpos</groupId>
             <artifactId>jpos</artifactId>
             <version>2.1.0</version>
