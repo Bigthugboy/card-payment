@@ -1,8 +1,14 @@
-FROM maven:3.8.7 as build
-COPY . .
-RUN mvn -B clean package -DskipTests
+# Use the official OpenJDK image from Docker Hub
+FROM openjdk:17
 
-FROM openjdk:11
-COPY --from=build web/target/*.jar app.jar
-# ENTRYPOINT ["java", "-jar", "-Dserver.port=${PORT}", "-Dspring.profiles.active=${PROFILE}","app.jar"]
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the application JAR file into the container
+COPY target/your-springboot-app.jar /app/app.jar
+
+# Expose the port the Spring Boot app runs on
+EXPOSE 8080
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
