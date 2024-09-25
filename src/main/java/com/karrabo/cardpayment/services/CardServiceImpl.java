@@ -127,7 +127,7 @@ public class CardServiceImpl implements CardService {
         packISO8583.setBit(123, field123, field123.length);
 
 
-        return getMasterKeySignOnWithIsoPayload("20351254", "20.119.72.7", "12000", "false", packISO8583);
+        return getMasterKeySignOnWithIsoPayload("20351254", "172.171.129.182", "12000", "false", packISO8583);
     }
 
     private KeysResponse getMasterKeySignOnWithIsoPayload(String tid, String ip, String port, String ssl, ISO8583 packISO8583) {
